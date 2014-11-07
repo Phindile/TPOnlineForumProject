@@ -1,0 +1,640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8C87E89-61CF-4980-A1E4-F09E2F5C0819}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ForumTP</RootNamespace>
+    <AssemblyName>ForumTP</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.8.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.24\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.4.5.6\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.4.5.6\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.2\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.0.0\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.0\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="activate.aspx" />
+    <Content Include="addpost.aspx" />
+    <Content Include="addprivatemsg.aspx" />
+    <Content Include="adduser.aspx" />
+    <Content Include="admin.aspx" />
+    <Content Include="adminonlineusers.aspx" />
+    <Content Include="allusers.aspx" />
+    <Content Include="App_Data\FORUM.mdf" />
+    <Content Include="App_Data\FORUM_log.ldf">
+      <DependentUpon>FORUM.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\Editor.css" />
+    <Content Include="Content\Forum.css" />
+    <Content Include="Content\jquery.autocomplete.css" />
+    <Content Include="Content\jquery.jgrowl.css" />
+    <Content Include="default.aspx" />
+    <Content Include="editprofile.aspx" />
+    <Content Include="faq.aspx" />
+    <Content Include="Images\admin.gif" />
+    <Content Include="Images\approve.png" />
+    <Content Include="Images\AspNetForumAvatar1.gif" />
+    <Content Include="Images\AspNetForumAvatar10.jpg" />
+    <Content Include="Images\AspNetForumAvatar11.jpg" />
+    <Content Include="Images\AspNetForumAvatar12.jpg" />
+    <Content Include="Images\AspNetForumAvatar13.jpg" />
+    <Content Include="Images\AspNetForumAvatar14.jpg" />
+    <Content Include="Images\AspNetForumAvatar15.jpg" />
+    <Content Include="Images\AspNetForumAvatar2.jpg" />
+    <Content Include="Images\AspNetForumAvatar3.jpg" />
+    <Content Include="Images\AspNetForumAvatar4.jpg" />
+    <Content Include="Images\AspNetForumAvatar5.gif" />
+    <Content Include="Images\AspNetForumAvatar6.jpg" />
+    <Content Include="Images\AspNetForumAvatar7.jpg" />
+    <Content Include="Images\AspNetForumAvatar8.jpg" />
+    <Content Include="Images\AspNetForumAvatar9.jpg" />
+    <Content Include="Images\btngradient.gif" />
+    <Content Include="Images\btngradient_rev.gif" />
+    <Content Include="Images\colors.gif" />
+    <Content Include="Images\darkgradient.gif" />
+    <Content Include="Images\darkgradient_rev.gif" />
+    <Content Include="Images\delete-topic.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\delete_bw.png" />
+    <Content Include="Images\down.png" />
+    <Content Include="Images\edit.gif" />
+    <Content Include="Images\editbar_bg.gif" />
+    <Content Include="Images\envelope.gif" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\fileicon_excel.png" />
+    <Content Include="Images\fileicon_na.png" />
+    <Content Include="Images\fileicon_pdf.png" />
+    <Content Include="Images\fileicon_word.png" />
+    <Content Include="Images\forum.gif" />
+    <Content Include="Images\forum.png" />
+    <Content Include="Images\guestavatar.gif" />
+    <Content Include="Images\icon_html.gif" />
+    <Content Include="Images\icon_list.gif" />
+    <Content Include="Images\icon_quote.png" />
+    <Content Include="Images\icon_youtube.gif" />
+    <Content Include="Images\img.gif" />
+    <Content Include="Images\lock.gif" />
+    <Content Include="Images\lock.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logout.gif" />
+    <Content Include="Images\ok.png" />
+    <Content Include="Images\openid-icon.png" />
+    <Content Include="Images\rss.png" />
+    <Content Include="Images\smilies\13501381245.gif" />
+    <Content Include="Images\smilies\13523300456.gif" />
+    <Content Include="Images\smilies\1cool.gif" />
+    <Content Include="Images\smilies\27418101277.gif" />
+    <Content Include="Images\smilies\28208052075.gif" />
+    <Content Include="Images\smilies\28510172849.gif" />
+    <Content Include="Images\smilies\28517070443.gif" />
+    <Content Include="Images\smilies\30416221069.gif" />
+    <Content Include="Images\smilies\30700402927.gif" />
+    <Content Include="Images\smilies\32308364851.gif" />
+    <Content Include="Images\smilies\404.gif" />
+    <Content Include="Images\smilies\4913420063.gif" />
+    <Content Include="Images\smilies\4915593391.gif" />
+    <Content Include="Images\smilies\5122424636.gif" />
+    <Content Include="Images\smilies\5420285018.gif" />
+    <Content Include="Images\smilies\5422184119.gif" />
+    <Content Include="Images\smilies\5700272664.gif" />
+    <Content Include="Images\smilies\5700274341.gif" />
+    <Content Include="Images\smilies\5700293539.gif" />
+    <Content Include="Images\smilies\5700365222.gif" />
+    <Content Include="Images\smilies\582145129.gif" />
+    <Content Include="Images\smilies\5821461258.gif" />
+    <Content Include="Images\smilies\5821472746.gif" />
+    <Content Include="Images\smilies\5821542753.gif" />
+    <Content Include="Images\smilies\5822044956.gif" />
+    <Content Include="Images\smilies\5822051440.gif" />
+    <Content Include="Images\smilies\5822214714.gif" />
+    <Content Include="Images\smilies\5822282438.gif" />
+    <Content Include="Images\smilies\5822291454.gif" />
+    <Content Include="Images\smilies\5822332967.gif" />
+    <Content Include="Images\smilies\5822392499.gif" />
+    <Content Include="Images\smilies\5903011026.gif" />
+    <Content Include="Images\smilies\6804382843.gif" />
+    <Content Include="Images\smilies\7309300734.gif" />
+    <Content Include="Images\smilies\7314474053.gif" />
+    <Content Include="Images\smilies\908572171.gif" />
+    <Content Include="Images\smilies\angel2.gif" />
+    <Content Include="Images\smilies\argue.gif" />
+    <Content Include="Images\smilies\badrazz.gif" />
+    <Content Include="Images\smilies\banghead.gif" />
+    <Content Include="Images\smilies\banhim.gif" />
+    <Content Include="Images\smilies\banned.gif" />
+    <Content Include="Images\smilies\beer.gif" />
+    <Content Include="Images\smilies\bgmad.gif" />
+    <Content Include="Images\smilies\biggrin.gif" />
+    <Content Include="Images\smilies\birthday.gif" />
+    <Content Include="Images\smilies\boink.gif" />
+    <Content Include="Images\smilies\bongL3i8.gif" />
+    <Content Include="Images\smilies\bowdown.gif" />
+    <Content Include="Images\smilies\bowrofl.gif" />
+    <Content Include="Images\smilies\boxer.gif" />
+    <Content Include="Images\smilies\bump.gif" />
+    <Content Include="Images\smilies\coffee26at.gif" />
+    <Content Include="Images\smilies\confused.gif" />
+    <Content Include="Images\smilies\confused7nt.gif" />
+    <Content Include="Images\smilies\crazy3.gif" />
+    <Content Include="Images\smilies\damnpc.gif" />
+    <Content Include="Images\smilies\dance.gif" />
+    <Content Include="Images\smilies\dawave.gif" />
+    <Content Include="Images\smilies\dbl.gif" />
+    <Content Include="Images\smilies\dri0047.gif" />
+    <Content Include="Images\smilies\dunno.gif" />
+    <Content Include="Images\smilies\edited.gif" />
+    <Content Include="Images\smilies\educate.gif" />
+    <Content Include="Images\smilies\eek.gif" />
+    <Content Include="Images\smilies\eek7.gif" />
+    <Content Include="Images\smilies\faqnice.gif" />
+    <Content Include="Images\smilies\feedback.gif" />
+    <Content Include="Images\smilies\fingersx.gif" />
+    <Content Include="Images\smilies\flasher.gif" />
+    <Content Include="Images\smilies\flogging.gif" />
+    <Content Include="Images\smilies\fork_off.gif" />
+    <Content Include="Images\smilies\frown.gif" />
+    <Content Include="Images\smilies\fruit.gif" />
+    <Content Include="Images\smilies\goodpost7td.gif" />
+    <Content Include="Images\smilies\google.gif" />
+    <Content Include="Images\smilies\gotcha.gif" />
+    <Content Include="Images\smilies\grngreedy.gif" />
+    <Content Include="Images\smilies\grouphug.gif" />
+    <Content Include="Images\smilies\hahaha.gif" />
+    <Content Include="Images\smilies\hahano.gif" />
+    <Content Include="Images\smilies\headscratch.gif" />
+    <Content Include="Images\smilies\heh_heh.gif" />
+    <Content Include="Images\smilies\hitit.gif" />
+    <Content Include="Images\smilies\hsnono.gif" />
+    <Content Include="Images\smilies\hug.gif" />
+    <Content Include="Images\smilies\iagree.gif" />
+    <Content Include="Images\smilies\icon_darin.gif" />
+    <Content Include="Images\smilies\ignore.gif" />
+    <Content Include="Images\smilies\ill.gif" />
+    <Content Include="Images\smilies\jammin.gif" />
+    <Content Include="Images\smilies\kekekegay.gif" />
+    <Content Include="Images\smilies\king.gif" />
+    <Content Include="Images\smilies\kissyou.gif" />
+    <Content Include="Images\smilies\knee7rm.gif" />
+    <Content Include="Images\smilies\lamer2845nh.gif" />
+    <Content Include="Images\smilies\laugh.gif" />
+    <Content Include="Images\smilies\lockd.gif" />
+    <Content Include="Images\smilies\loo.gif" />
+    <Content Include="Images\smilies\menacegrin.gif" />
+    <Content Include="Images\smilies\metallicblue.gif" />
+    <Content Include="Images\smilies\milk.gif" />
+    <Content Include="Images\smilies\music-smiley-026.gif" />
+    <Content Include="Images\smilies\naughty.gif" />
+    <Content Include="Images\smilies\navbits_finallink.gif" />
+    <Content Include="Images\smilies\navbits_start.gif" />
+    <Content Include="Images\smilies\newbluesweatdrop.gif" />
+    <Content Include="Images\smilies\nosmile.gif" />
+    <Content Include="Images\smilies\nutkick5ur.gif" />
+    <Content Include="Images\smilies\offtopic.gif" />
+    <Content Include="Images\smilies\omg9hi.gif" />
+    <Content Include="Images\smilies\ontopic.gif" />
+    <Content Include="Images\smilies\overlord.gif" />
+    <Content Include="Images\smilies\owned.gif" />
+    <Content Include="Images\smilies\party.gif" />
+    <Content Include="Images\smilies\pat9xu.gif" />
+    <Content Include="Images\smilies\Peace!.gif" />
+    <Content Include="Images\smilies\pimp.gif" />
+    <Content Include="Images\smilies\pir8.gif" />
+    <Content Include="Images\smilies\po.gif" />
+    <Content Include="Images\smilies\police.gif" />
+    <Content Include="Images\smilies\qfe.gif" />
+    <Content Include="Images\smilies\rant2.gif" />
+    <Content Include="Images\smilies\repost.gif" />
+    <Content Include="Images\smilies\rolleyes.gif" />
+    <Content Include="Images\smilies\rtfm.gif" />
+    <Content Include="Images\smilies\rulez.gif" />
+    <Content Include="Images\smilies\sd3.gif" />
+    <Content Include="Images\smilies\sdb60030.gif" />
+    <Content Include="Images\smilies\shakehead.gif" />
+    <Content Include="Images\smilies\SHOCKED.gif" />
+    <Content Include="Images\smilies\silly.gif" />
+    <Content Include="Images\smilies\smash.gif" />
+    <Content Include="Images\smilies\smile.gif" />
+    <Content Include="Images\smilies\spam4ot.gif" />
+    <Content Include="Images\smilies\spliff.gif" />
+    <Content Include="Images\smilies\spock.gif" />
+    <Content Include="Images\smilies\spyme.gif" />
+    <Content Include="Images\smilies\squint.gif" />
+    <Content Include="Images\smilies\ssst.gif" />
+    <Content Include="Images\smilies\sterb0298yz.gif" />
+    <Content Include="Images\smilies\sterb0734ps.gif" />
+    <Content Include="Images\smilies\sterb1842sg.gif" />
+    <Content Include="Images\smilies\sterb1881bq.gif" />
+    <Content Include="Images\smilies\sterb1908nd.gif" />
+    <Content Include="Images\smilies\sterb1918mv.gif" />
+    <Content Include="Images\smilies\sterb2457li.gif" />
+    <Content Include="Images\smilies\stickpoke.gif" />
+    <Content Include="Images\smilies\stupid.gif" />
+    <Content Include="Images\smilies\suicide.gif" />
+    <Content Include="Images\smilies\thefinger.gif" />
+    <Content Include="Images\smilies\threadjacked.gif" />
+    <Content Include="Images\smilies\thumb.gif" />
+    <Content Include="Images\smilies\thumbdowncopy1up.gif" />
+    <Content Include="Images\smilies\tinfoil.gif" />
+    <Content Include="Images\smilies\tongue.gif" />
+    <Content Include="Images\smilies\twitch2.gif" />
+    <Content Include="Images\smilies\UNCLESAM.gif" />
+    <Content Include="Images\smilies\upset.gif" />
+    <Content Include="Images\smilies\urstupid.gif" />
+    <Content Include="Images\smilies\usa.gif" />
+    <Content Include="Images\smilies\wavey.gif" />
+    <Content Include="Images\smilies\werd.gif" />
+    <Content Include="Images\smilies\whs0be.gif" />
+    <Content Include="Images\smilies\wiggle.gif" />
+    <Content Include="Images\smilies\wiki.gif" />
+    <Content Include="Images\smilies\wink.gif" />
+    <Content Include="Images\smilies\wink_2.gif" />
+    <Content Include="Images\smilies\woohoo.gif" />
+    <Content Include="Images\smilies\worshippy.gif" />
+    <Content Include="Images\smilies\wtcslap.gif" />
+    <Content Include="Images\smilies\wtf.gif" />
+    <Content Include="Images\smilies\xxx.gif" />
+    <Content Include="Images\smilies\ylsuper.gif" />
+    <Content Include="Images\smilies\_sure.gif" />
+    <Content Include="Images\stick.png" />
+    <Content Include="Images\thumbsdown.png" />
+    <Content Include="Images\thumbsup.png" />
+    <Content Include="Images\topic.gif" />
+    <Content Include="Images\topic_locked.png" />
+    <Content Include="Images\topic_sticky.png" />
+    <Content Include="Images\topic_unread.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\unreadmessages.png" />
+    <Content Include="Images\unreadtopics.png" />
+    <Content Include="Images\up.png" />
+    <Content Include="Images\url.gif" />
+    <Content Include="Images\vote_bg.gif" />
+    <Content Include="recent.aspx" />
+    <Content Include="recentposts.ascx" />
+    <Content Include="forums.aspx" />
+    <Content Include="register.aspx" />
+    <Content Include="Scripts\editor.js" />
+    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\jquery.autocomplete.js" />
+    <Content Include="Scripts\jquery.jgrowl_minimized.js" />
+    <Content Include="Scripts\jquery.MultiFile.js" />
+    <Content Include="Scripts\jquery.placeholder.min.js" />
+    <Content Include="users.aspx" />
+    <Content Include="viewprofile.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\ForumMaster.Master" />
+    <Content Include="ajaxutils.ashx" />
+    <Content Include="addpostajax.ashx" />
+    <Content Include="ajaxuserautocomplete.ashx" />
+    <Content Include="captchaimage.ashx" />
+    <Content Include="getattachment.ashx" />
+    <Content Include="getavatar.ashx" />
+    <Content Include="imgthumbnail.ashx" />
+    <Content Include="messagesajax.ashx" />
+    <Content Include="renewsession.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="activate.aspx.cs">
+      <DependentUpon>activate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="activate.aspx.designer.cs">
+      <DependentUpon>activate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addpost.aspx.cs">
+      <DependentUpon>addpost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addpost.aspx.designer.cs">
+      <DependentUpon>addpost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addpostajax.ashx.cs">
+      <DependentUpon>addpostajax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="addprivatemsg.aspx.cs">
+      <DependentUpon>addprivatemsg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addprivatemsg.aspx.designer.cs">
+      <DependentUpon>addprivatemsg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adduser.aspx.cs">
+      <DependentUpon>adduser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adduser.aspx.designer.cs">
+      <DependentUpon>adduser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminonlineusers.aspx.cs">
+      <DependentUpon>adminonlineusers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminonlineusers.aspx.designer.cs">
+      <DependentUpon>adminonlineusers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ajaxuserautocomplete.ashx.cs">
+      <DependentUpon>ajaxuserautocomplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ajaxutils.ashx.cs">
+      <DependentUpon>ajaxutils.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="allusers.aspx.cs">
+      <DependentUpon>allusers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="allusers.aspx.designer.cs">
+      <DependentUpon>allusers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="captchaimage.ashx.cs">
+      <DependentUpon>captchaimage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ForumMaster.Master.cs">
+      <DependentUpon>ForumMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ForumMaster.Master.designer.cs">
+      <DependentUpon>ForumMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editprofile.aspx.cs">
+      <DependentUpon>editprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editprofile.aspx.designer.cs">
+      <DependentUpon>editprofile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="faq.aspx.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="faq.aspx.designer.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getattachment.ashx.cs">
+      <DependentUpon>getattachment.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="getavatar.ashx.cs">
+      <DependentUpon>getavatar.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="imgthumbnail.ashx.cs">
+      <DependentUpon>imgthumbnail.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="messagesajax.ashx.cs">
+      <DependentUpon>messagesajax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="recent.aspx.cs">
+      <DependentUpon>recent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recent.aspx.designer.cs">
+      <DependentUpon>recent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recentposts.ascx.cs">
+      <DependentUpon>recentposts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forums.aspx.cs">
+      <DependentUpon>forums.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forums.aspx.designer.cs">
+      <DependentUpon>forums.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumSEOHttpModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="renewsession.ashx.cs">
+      <DependentUpon>renewsession.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\various.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>various.resx</DependentUpon>
+    </Compile>
+    <Compile Include="THDataGrid.cs" />
+    <Compile Include="users.aspx.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="users.aspx.designer.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Achievement.cs" />
+    <Compile Include="Utility\Achievements.cs" />
+    <Compile Include="Utility\ActiveDirectoryUtil.cs" />
+    <Compile Include="Utility\Attachments.cs" />
+    <Compile Include="Utility\CaptchaImage.cs" />
+    <Compile Include="Utility\DataAccessAwareSets.cs" />
+    <Compile Include="Utility\DataAccessUtil.cs" />
+    <Compile Include="Utility\Enumerations\AchievementType.cs" />
+    <Compile Include="Utility\ExceptionHandler.cs" />
+    <Compile Include="Utility\Formatting.cs" />
+    <Compile Include="Utility\Forum.cs" />
+    <Compile Include="Utility\ForumStatistics.cs" />
+    <Compile Include="Utility\IFileAttachement.cs" />
+    <Compile Include="Utility\JSON.cs" />
+    <Compile Include="Utility\Message.cs" />
+    <Compile Include="Utility\ModeratorStats.cs" />
+    <Compile Include="Utility\OAuthBase.cs" />
+    <Compile Include="Utility\OneWayEncrypt.cs" />
+    <Compile Include="Utility\Password.cs" />
+    <Compile Include="Utility\SendMail.cs" />
+    <Compile Include="Utility\SendNots.cs" />
+    <Compile Include="Utility\SessionExtender.cs" />
+    <Compile Include="Utility\Settings.cs" />
+    <Compile Include="Utility\StringUtils.cs" />
+    <Compile Include="Utility\Topic.cs" />
+    <Compile Include="Utility\UnreadTracker.cs" />
+    <Compile Include="Utility\User.cs" />
+    <Compile Include="Utility\UserInfo.cs" />
+    <Compile Include="Utility\Various.cs" />
+    <Compile Include="viewprofile.aspx.cs">
+      <DependentUpon>viewprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewprofile.aspx.designer.cs">
+      <DependentUpon>viewprofile.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Account\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\various.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>various.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50266</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50266/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
